@@ -5,5 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     task.addEventListener("click", () => {
       window.location.href = `/home/task/${task.id}`;
     });
+
+    let checkbox = task.children[0].firstElementChild;
+    checkbox.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
   });
 });
