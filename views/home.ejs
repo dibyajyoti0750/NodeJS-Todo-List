@@ -1,0 +1,21 @@
+<%- include("includes/header", {title:"Todo List", stylesheet:"/home.css"}) %>
+<body>
+  <h1><i class="fa-solid fa-house-chimney"></i>&nbsp; Tasks</h1>
+  <div class="tasks">
+    <% for(const task of tasks) { %>
+    <div class="task" id="<%= task.id %>">
+      <div class="checkbox-container">
+        <input type="checkbox" id="check<%= task.id %>" name="check" />
+        <label for="check<%= task.id %>"><%= task.task %></label>
+      </div>
+      <i class="far fa-star"></i>
+    </div>
+    <% } %>
+
+    <a href="http://localhost:8080/home/add" id="add"
+      ><i class="fa-solid fa-plus"></i>&nbsp; Add a task</a
+    >
+  </div>
+
+  <script src="/app.js"></script>
+</body>
