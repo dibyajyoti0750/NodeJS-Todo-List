@@ -52,11 +52,10 @@ app.get("/home/edit/:id", (req, res) => {
 
 app.patch("/home/:id", (req, res) => {
   let { id } = req.params;
-  let newTask = req.body;
-  console.log(req.body);
-  // let oldTask = tasks.find((task) => id === task.id);
-  // oldTask.task = newTask;
-  // res.redirect("/home");
+  let newTask = req.body.task;
+  let oldTask = tasks.find((task) => id === task.id);
+  oldTask.task = newTask;
+  res.redirect("/home");
 });
 
 app.listen(port, () => {
