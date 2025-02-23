@@ -1,13 +1,15 @@
-<%- include("includes/header", {title:"Task Details", stylesheet:"/show.css"})
-%>
+<%- include("includes/header", {title:"Task Details",
+stylesheet:"/css/show.css"}) %>
 <body>
   <div class="tasks">
     <div class="task" id="<%= task.id %>">
       <div class="checkbox-container">
         <input type="checkbox" id="check<%= task.id %>" name="check" />
-        <label for="check<%= task.id %>"><%= task.task %></label>
+        <label for="check<%= task.id %>" class="label"></label> <%= task.task %>
       </div>
+      <i class="fa-solid fa-pen"></i>
       <i class="far fa-star"></i>
     </div>
   </div>
+  <script src="/js/show.js"></script>
 </body>

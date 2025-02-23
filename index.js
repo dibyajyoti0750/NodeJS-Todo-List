@@ -43,6 +43,11 @@ app.get("/home/task/:id", (req, res) => {
   res.render("show", { task });
 });
 
+app.get("/home/edit/:id", (req, res) => {
+  let { id } = req.params;
+  res.render("edit");
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
