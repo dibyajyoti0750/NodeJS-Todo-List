@@ -155,11 +155,18 @@ body {
   color: #ffcc00;
   text-decoration: none;
   margin-bottom: 0.5rem;
-  margin-left: 5.4rem;
+  margin-left: 5.3rem;
   align-self: flex-start;
+  z-index: 1;
   transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .back-btn:hover {
   color: #ffd700;
+}
+
+@media (orientation: portrait) {
+  .back-btn {
+    margin-left: 2.05rem;
+  }
 }

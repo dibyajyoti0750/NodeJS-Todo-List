@@ -6,8 +6,8 @@
     <% for(const task of tasks) { %>
     <div class="task" id="<%= task.id %>">
       <div class="checkbox-container">
-        <input type="checkbox" id="check<%= task.id %>" name="check" />
-        <label for="check<%= task.id %>"><%= task.task %></label>
+        <input type="checkbox" name="check" />
+        <label><%= task.task %></label>
       </div>
       <i class="far fa-star"></i>
     </div>
