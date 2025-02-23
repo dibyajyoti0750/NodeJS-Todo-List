@@ -3,6 +3,10 @@ stylesheet:"/css/show.css"}) %>
 <body>
   <form method="post" action="/home/<%= task.id %>?_method=PATCH">
     <div class="tasks">
+      <a href="javascript:history.back()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </a>
+
       <div class="task" id="<%= task.id %>">
         <div class="checkbox-container">
           <input type="checkbox" id="check<%= task.id %>" name="check" />

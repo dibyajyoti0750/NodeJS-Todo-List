@@ -149,3 +149,18 @@ body {
 .saveChanges {
   display: none;
 }
+
+.back-btn {
+  font-size: 1.2rem;
+  color: #ffcc00;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  margin-left: 5.4rem;
+  align-self: flex-start;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.back-btn:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
