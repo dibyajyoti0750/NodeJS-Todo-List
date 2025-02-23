@@ -10,7 +10,9 @@ stylesheet:"/css/show.css"}) %>
       <div class="task" id="<%= task.id %>">
         <div class="checkbox-container">
           <input type="checkbox" id="check<%= task.id %>" name="check" />
-          <textarea name="task" class="task-text"><%= task.task %></textarea>
+          <textarea name="task" class="task-text" enterkeyhint="done">
+<%= task.task %></textarea
+          >
         </div>
         <i class="far fa-star"></i>
       </div>
