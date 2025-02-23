@@ -2,13 +2,21 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #121212;
   color: #e0e0e0;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
   position: relative;
   top: 1rem;
-  margin-left: 6.563rem;
+  margin-left: 1.9rem;
   color: #f5f5f5;
+}
+
+@media (orientation: portrait) {
+  h1 {
+    margin-left: 0.95rem;
+  }
 }
 
 .tasks {
@@ -21,7 +29,7 @@ h1 {
 .task {
   display: flex;
   align-items: center;
-  width: 70%;
+  width: 92%;
   padding: 0.75rem 1rem;
   margin: 0.12rem 0;
   background-color: #1e1e1e;
@@ -40,13 +48,13 @@ h1 {
 }
 
 .task input[type="checkbox"] {
-  appearance: none; /* Hide default checkbox */
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid #ffcc00; /* Gold border */
-  border-radius: 50%; /* Makes it circular */
+  border: 2px solid #ffcc00;
+  border-radius: 50%;
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -54,7 +62,7 @@ h1 {
 }
 
 .task input[type="checkbox"]:checked {
-  background-color: #ffcc00; /* Gold fill when checked */
+  background-color: #ffcc00;
   border: 2px solid #ffcc00;
 }
 
@@ -62,7 +70,7 @@ h1 {
   content: "\2713"; /* Checkmark symbol */
   font-size: 14px;
   font-weight: bold;
-  color: #121212; /* Dark checkmark for contrast */
+  color: #121212;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +81,7 @@ h1 {
 }
 
 .task input[type="checkbox"]:checked::before {
-  opacity: 1; /* Show checkmark when checked */
+  opacity: 1;
 }
 
 .task label {
@@ -90,13 +98,17 @@ h1 {
 }
 
 #add {
-  position: absolute;
-  bottom: 3rem;
-  width: 66%;
+  position: relative;
+  margin: 0.12rem 0;
+  width: 92%;
   padding: 1rem;
   color: aqua;
   background-color: #1e1e1e;
   border-radius: 0.2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   text-decoration: none;
+}
+
+.add {
+  font-weight: 600;
 }
