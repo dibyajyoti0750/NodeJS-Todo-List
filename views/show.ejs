@@ -1,15 +1,20 @@
 <%- include("includes/header", {title:"Task Details",
 stylesheet:"/css/show.css"}) %>
 <body>
-  <div class="tasks">
-    <div class="task" id="<%= task.id %>">
-      <div class="checkbox-container">
-        <input type="checkbox" id="check<%= task.id %>" name="check" />
-        <label for="check<%= task.id %>" class="label"></label> <%= task.task %>
+  <form method="post" action="/home/<%= task.id %>?_method=PATCH">
+    <div class="tasks">
+      <div class="task" id="<%= task.id %>">
+        <div class="checkbox-container">
+          <input type="checkbox" id="check<%= task.id %>" name="check" />
+          <label for="check<%= task.id %>" class="label" name="task">
+            <%= task.task %></label
+          >
+        </div>
+        <i class="fa-solid fa-pen"></i>
+        <i class="far fa-star"></i>
       </div>
-      <i class="fa-solid fa-pen"></i>
-      <i class="far fa-star"></i>
+      <button type="submit" class="saveChanges">Save Changes?</button>
     </div>
-  </div>
+  </form>
   <script src="/js/show.js"></script>
 </body>

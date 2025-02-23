@@ -1,11 +1,13 @@
 const express = require("express");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
+const methodOverride = require("method-override");
 
 const app = express();
 const port = 8080;
 
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -46,6 +48,15 @@ app.get("/home/task/:id", (req, res) => {
 app.get("/home/edit/:id", (req, res) => {
   let { id } = req.params;
   res.render("edit");
+});
+
+app.patch("/home/:id", (req, res) => {
+  let { id } = req.params;
+  let newTask = req.body;
+  console.log(req.body);
+  // let oldTask = tasks.find((task) => id === task.id);
+  // oldTask.task = newTask;
+  // res.redirect("/home");
 });
 
 app.listen(port, () => {
