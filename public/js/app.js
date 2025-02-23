@@ -6,8 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = `/home/task/${task.id}`;
     });
 
-    let checkbox = task.children[0].firstElementChild;
+    let checkbox = task.children[0].children[0];
     checkbox.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+
+    let label = task.children[0].children[1];
+    label.addEventListener("click", (e) => {
       e.stopPropagation();
     });
   });
