@@ -10,7 +10,13 @@ h1 {
   position: relative;
   top: 1rem;
   margin-left: 1.9rem;
-  color: #f5f5f5;
+  margin-bottom: 1.2rem;
+  font-size: 1.75rem;
+  background: linear-gradient(135deg, #00e3ff 0%, #0066ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 102, 255, 0.2);
 }
 
 @media (orientation: portrait) {
@@ -53,7 +59,7 @@ h1 {
   -moz-appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid #ffcc00;
+  border: 2px solid #00e3ff;
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -62,8 +68,9 @@ h1 {
 }
 
 .task input[type="checkbox"]:checked {
-  background-color: #ffcc00;
-  border: 2px solid #ffcc00;
+  background-color: #00e3ff;
+  border: 2px solid #00e3ff;
+  box-shadow: 0 0 5px rgba(0, 227, 255, 0.6), 0 0 15px rgba(0, 227, 255, 0.4);
 }
 
 .task input[type="checkbox"]::before {
@@ -91,11 +98,16 @@ h1 {
 }
 
 .fa-star {
-  color: #ffcc00;
+  color: #f0ffff;
   font-size: 1.2rem;
   margin-left: auto;
   margin-right: 0.2rem;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.fa-star:hover {
+  color: #00e3ff;
 }
 
 #add {
@@ -103,7 +115,7 @@ h1 {
   margin: 0.12rem 0;
   width: 92%;
   padding: 1rem;
-  color: aqua;
+  color: #00e3ff;
   background-color: #1e1e1e;
   border-radius: 0.2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);

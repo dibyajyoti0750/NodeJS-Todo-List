@@ -26,9 +26,13 @@ body {
 }
 
 h1 {
-  color: #f8b400;
   margin-bottom: 1.2rem;
   font-size: 1.75rem;
+  background: linear-gradient(135deg, #00e3ff 0%, #0066ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 102, 255, 0.2);
 }
 
 form {
@@ -48,7 +52,8 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border-color: #f8b400;
+  border-color: #00e3ff;
+  box-shadow: 0 0 5px rgba(0, 227, 255, 0.6), 0 0 15px rgba(0, 227, 255, 0.4);
 }
 
 input[type="text"]::placeholder {
@@ -66,7 +71,7 @@ button {
   display: inline-flex;
   align-items: center;
   padding: 1rem 1.5rem;
-  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+  background: linear-gradient(135deg, #00e3ff 0%, #0066ff 100%);
   border: none;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -112,17 +117,30 @@ button:active {
 }
 
 .back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.2rem;
-  color: #ffcc00;
+  color: #00e3ff;
   text-decoration: none;
   margin-bottom: -4rem;
   margin-left: 3.88rem;
   z-index: 1;
-  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 .back-btn:hover {
-  color: #ffd700;
+  color: #0066ff;
+  transform: translateY(-1px);
+}
+
+.back-btn:hover .fa-arrow-left {
+  transform: translateX(-3px);
+}
+
+.fa-arrow-left {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (orientation: portrait) {
