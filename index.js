@@ -58,6 +58,12 @@ app.patch("/home/:id", (req, res) => {
   res.redirect("/home");
 });
 
+app.delete("/home/:id", (req, res) => {
+  let { id } = req.params;
+  tasks = tasks.filter((el) => el.id !== id);
+  res.status(200).send({ message: "Task deleted successfully" });
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
