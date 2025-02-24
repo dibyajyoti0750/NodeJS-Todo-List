@@ -50,3 +50,13 @@ for (let checkbox of checkboxes) {
     }
   });
 }
+
+const stars = document.querySelectorAll(".fa-star");
+
+for (let star of stars) {
+  star.addEventListener("click", (e) => {
+    star.classList.toggle("far");
+    star.classList.toggle("fas");
+    e.stopPropagation();
+  });
+}

@@ -59,3 +59,11 @@ checkbox.addEventListener("change", async () => {
     console.log("Error", error);
   }
 });
+
+const star = document.querySelector(".fa-star");
+
+star.addEventListener("click", (e) => {
+  star.classList.toggle("far");
+  star.classList.toggle("fas");
+  e.stopPropagation();
+});
