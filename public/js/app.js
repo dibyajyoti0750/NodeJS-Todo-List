@@ -19,9 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const checkboxes = document.querySelectorAll(".checkbox");
+const checkSound = new Audio("/sounds/ding-126626.mp3"); // Load the sound
 
 for (let checkbox of checkboxes) {
   checkbox.addEventListener("change", async () => {
+    if (checkbox.checked) {
+      checkSound.currentTime = 0; // Reset sound to start (prevents delay)
+      checkSound.play(); // Play the sound
+    }
+
     const taskDiv = checkbox.closest(".task");
     const taskId = taskDiv.id;
 

@@ -9,7 +9,12 @@ stylesheet:"/css/show.css"}) %>
 
       <div class="task" id="<%= task.id %>">
         <div class="checkbox-container">
-          <input type="checkbox" id="check<%= task.id %>" name="check" />
+          <input
+            type="checkbox"
+            id="check<%= task.id %>"
+            name="check"
+            class="checkbox"
+          />
           <textarea name="task" class="task-text" enterkeyhint="done">
 <%= task.task %></textarea
           >
@@ -19,5 +24,7 @@ stylesheet:"/css/show.css"}) %>
       <button type="submit" class="saveChanges">Save Changes?</button>
     </div>
   </form>
+
   <script src="/js/show.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
