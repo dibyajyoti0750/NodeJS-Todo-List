@@ -148,3 +148,8 @@ button:active {
     margin-left: 1rem;
   }
 }
+
+.errorMsg {
+  color: red;
+  display: none;
+}
