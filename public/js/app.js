@@ -71,7 +71,7 @@ for (let star of stars) {
 
       // Apply inline style to move exactly to the top
       task.style.animation = `fly 1s ease-in-out forwards`;
-      task.style.setProperty("--moveHeight", `-${tasksHeight - 95}px`);
+      task.style.setProperty("--moveHeight", `-${tasksHeight - 100}px`);
 
       task.classList.add("moving");
 
