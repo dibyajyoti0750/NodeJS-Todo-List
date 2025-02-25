@@ -48,6 +48,19 @@ h1 {
   background: #252525;
 }
 
+@keyframes fly {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(var(--moveHeight)); /* Move up dynamically */
+  }
+}
+
+.moving {
+  position: relative;
+}
+
 .checkbox-container {
   display: flex;
   align-items: center;

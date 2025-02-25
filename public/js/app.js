@@ -52,11 +52,38 @@ for (let checkbox of checkboxes) {
 }
 
 const stars = document.querySelectorAll(".fa-star");
+let tasksDiv = document.querySelector(".tasks");
 
 for (let star of stars) {
   star.addEventListener("click", (e) => {
-    star.classList.toggle("far");
-    star.classList.toggle("fas");
     e.stopPropagation();
+
+    let task = star.parentNode;
+    let isImportant = star.classList.contains("fas");
+
+    if (!isImportant) {
+      // Mark as important
+      star.classList.add("fas");
+      star.classList.remove("far");
+
+      // Get the height of the tasks container dynamically
+      let tasksHeight = tasksDiv.offsetHeight;
+
+      // Apply inline style to move exactly to the top
+      task.style.animation = `fly 1s ease-in-out forwards`;
+      task.style.setProperty("--moveHeight", `-${tasksHeight - 95}px`);
+
+      task.classList.add("moving");
+
+      setTimeout(() => {
+        task.classList.remove("moving");
+        task.style.animation = ""; // Reset animation
+        tasksDiv.insertAdjacentElement("afterbegin", task);
+      }, 1000); // Matches animation duration
+    } else {
+      // Mark as normal
+      star.classList.add("far");
+      star.classList.remove("fas");
+    }
   });
 }
