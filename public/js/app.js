@@ -41,7 +41,7 @@ for (let checkbox of checkboxes) {
 
         setTimeout(() => {
           taskDiv.remove();
-        }, 1000);
+        }, 800);
       } else {
         console.log("Failed to delete task");
       }
