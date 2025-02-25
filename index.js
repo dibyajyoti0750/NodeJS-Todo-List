@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 let tasks = [
   { id: uuidv4(), task: "Eat" },
+  { id: uuidv4(), task: "Run" },
   { id: uuidv4(), task: "Code" },
   { id: uuidv4(), task: "Sleep" },
   { id: uuidv4(), task: "Repeat" },
